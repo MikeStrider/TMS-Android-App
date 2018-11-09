@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mstrong.tk" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://mstrong.tk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://mstrong.tk">
+      <s:element name="SetDriverAvail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="datetime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDriverAvailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetDriverAvailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveTender">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pickupdateandtime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dropoffdateandtime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickuplocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dropofflocation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveTenderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveTenderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDriverNotAvail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDriverNotAvailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetDriverNotAvailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="truck" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="datetime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateVehicleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SetDriverAvailSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDriverAvail" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverAvailSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDriverAvailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveTender" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveTenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDriverNotAvail" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDriverNotAvailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:updateVehicle" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:updateVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverAvailHttpGetIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="datetime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverAvailHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderHttpGetIn">
+    <wsdl:part name="pickupdateandtime" type="s:string" />
+    <wsdl:part name="dropoffdateandtime" type="s:string" />
+    <wsdl:part name="pickuplocation" type="s:string" />
+    <wsdl:part name="dropofflocation" type="s:string" />
+    <wsdl:part name="compid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailHttpGetIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpGetIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleHttpGetIn">
+    <wsdl:part name="compid" type="s:string" />
+    <wsdl:part name="truck" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="datetime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverAvailHttpPostIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="datetime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverAvailHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderHttpPostIn">
+    <wsdl:part name="pickupdateandtime" type="s:string" />
+    <wsdl:part name="dropoffdateandtime" type="s:string" />
+    <wsdl:part name="pickuplocation" type="s:string" />
+    <wsdl:part name="dropofflocation" type="s:string" />
+    <wsdl:part name="compid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveTenderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailHttpPostIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDriverNotAvailHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpPostIn">
+    <wsdl:part name="drivername" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleHttpPostIn">
+    <wsdl:part name="compid" type="s:string" />
+    <wsdl:part name="truck" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="datetime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateVehicleHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="SetDriverAvail">
+      <wsdl:input message="tns:SetDriverAvailSoapIn" />
+      <wsdl:output message="tns:SetDriverAvailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <wsdl:input message="tns:ReceiveTenderSoapIn" />
+      <wsdl:output message="tns:ReceiveTenderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <wsdl:input message="tns:SetDriverNotAvailSoapIn" />
+      <wsdl:output message="tns:SetDriverNotAvailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusSoapIn" />
+      <wsdl:output message="tns:GetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <wsdl:input message="tns:updateVehicleSoapIn" />
+      <wsdl:output message="tns:updateVehicleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="SetDriverAvail">
+      <wsdl:input message="tns:SetDriverAvailHttpGetIn" />
+      <wsdl:output message="tns:SetDriverAvailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <wsdl:input message="tns:ReceiveTenderHttpGetIn" />
+      <wsdl:output message="tns:ReceiveTenderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <wsdl:input message="tns:SetDriverNotAvailHttpGetIn" />
+      <wsdl:output message="tns:SetDriverNotAvailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusHttpGetIn" />
+      <wsdl:output message="tns:GetStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <wsdl:input message="tns:updateVehicleHttpGetIn" />
+      <wsdl:output message="tns:updateVehicleHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="SetDriverAvail">
+      <wsdl:input message="tns:SetDriverAvailHttpPostIn" />
+      <wsdl:output message="tns:SetDriverAvailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <wsdl:input message="tns:ReceiveTenderHttpPostIn" />
+      <wsdl:output message="tns:ReceiveTenderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <wsdl:input message="tns:SetDriverNotAvailHttpPostIn" />
+      <wsdl:output message="tns:SetDriverNotAvailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusHttpPostIn" />
+      <wsdl:output message="tns:GetStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <wsdl:input message="tns:updateVehicleHttpPostIn" />
+      <wsdl:output message="tns:updateVehicleHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetDriverAvail">
+      <soap:operation soapAction="http://mstrong.tk/SetDriverAvail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <soap:operation soapAction="http://mstrong.tk/ReceiveTender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <soap:operation soapAction="http://mstrong.tk/SetDriverNotAvail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://mstrong.tk/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <soap:operation soapAction="http://mstrong.tk/updateVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetDriverAvail">
+      <soap12:operation soapAction="http://mstrong.tk/SetDriverAvail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <soap12:operation soapAction="http://mstrong.tk/ReceiveTender" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <soap12:operation soapAction="http://mstrong.tk/SetDriverNotAvail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="http://mstrong.tk/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <soap12:operation soapAction="http://mstrong.tk/updateVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SetDriverAvail">
+      <http:operation location="/SetDriverAvail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <http:operation location="/ReceiveTender" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <http:operation location="/SetDriverNotAvail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <http:operation location="/GetStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <http:operation location="/updateVehicle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SetDriverAvail">
+      <http:operation location="/SetDriverAvail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveTender">
+      <http:operation location="/ReceiveTender" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDriverNotAvail">
+      <http:operation location="/SetDriverNotAvail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <http:operation location="/GetStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicle">
+      <http:operation location="/updateVehicle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://mstrongcreates.com/webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://mstrongcreates.com/webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://mstrongcreates.com/webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://mstrongcreates.com/webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

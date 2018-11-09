@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest p1:installLocation="auto" xmlns:p1="http://schemas.android.com/apk/res/android" package="TMS_Next_Level.TMS_Next_Level" p1:versionCode="5" p1:versionName="5">
+	<uses-permission p1:name="android.permission.INTERNET" />
+	<uses-permission p1:name="android.permission.ACCESS_FINE_LOCATION" />
+	<application p1:label="TMS Next Level"></application>
+	<uses-sdk p1:minSdkVersion="21" p1:targetSdkVersion="21" />
+</manifest>

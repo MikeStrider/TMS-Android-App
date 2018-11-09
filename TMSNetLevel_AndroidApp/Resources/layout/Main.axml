@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TextView
+            android:text="AVAILABILITY"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="165.5dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:text="go to Tracking"
+            android:layout_width="167.5dp"
+            android:layout_height="32.5dp"
+            android:id="@+id/btnGoToTracking"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginBottom="0.0dp"
+            android:layout_marginTop="0.0dp" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/EditText_userID"
+        android:layout_width="120pt"
+        android:layout_height="wrap_content"
+        android:hint="Enter User ID" />
+    <EditText
+        android:id="@+id/EditText_Password"
+        android:layout_width="120pt"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:hint="Enter Password" />
+    <EditText
+        android:id="@+id/EditText_Location"
+        android:layout_width="120pt"
+        android:layout_height="wrap_content"
+        android:hint="Enter Location" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/EditText_Date"
+            android:layout_width="120pt"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Click to add Date"
+            android:layout_weight="1" />
+        <EditText
+            android:id="@+id/EditText_Time"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Click to add Time"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/Button_setavail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Available" />
+    <Button
+        android:id="@+id/Button_setnotavail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Not available" />
+    <Button
+        android:id="@+id/Button_getstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Current Status" />
+    <TextView
+        android:text="create and edit your account at http://mstrongcreates.com"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp" />
+</LinearLayout>
